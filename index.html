@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IoT Admin Dashboard</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    #map { height: 300px; }
+    body { padding: 2rem; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="mb-4 text-center">IoT Device Dashboard</h1>
+
+    <!-- Registration Form -->
+    <div class="card mb-4">
+      <div class="card-header">Register New Device</div>
+      <div class="card-body">
+        <form onsubmit="event.preventDefault(); addDevice();" class="row g-3">
+          <div class="col-md-6">
+            <label for="serial" class="form-label">Serial Number</label>
+            <input type="text" id="serialNumber" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label for="location" class="form-label">Device Label/Location</label>
+            <input type="text" id="location" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label for="latitude" class="form-label">Latitude</label>
+            <input type="text" id="latitude" class="form-control" readonly />
+          </div>
+          <div class="col-md-6">
+            <label for="longitude" class="form-label">Longitude</label>
+            <input type="text" id="longitude" class="form-control" readonly />
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Add Device</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="card mb-4">
+      <div class="card-header">Click Map to Set Device Location</div>
+      <div class="card-body">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <!-- Devices Table -->
+    <div class="card">
+      <div class="card-header">Registered Devices</div>
+      <div class="card-body">
+        <table class="table table-bordered" id="deviceTable">
+          <thead>
+            <tr>
+              <th>Serial</th>
+              <th>Label</th>
+              <th>Lat</th>
+              <th>Lng</th>
+              <th>Status</th>
+              <th>Toggle</th>
+            </tr>
+          </thead>
+          <tbody id="deviceList"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet & Bootstrap JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
