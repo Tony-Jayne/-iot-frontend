@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/devices';
+const API_URL = 'https://03229063fa89.ngrok-free.app';
 
 async function fetchDevices() {
   try {
@@ -60,7 +60,7 @@ async function addDevice() {
 
 async function toggleDevice(id) {
   try {
-    const res = await fetch(`http://localhost:5000/api/devices/${id}/toggle`, {
+    const res = await fetch('${apiBaseUrl}/api/devices/${id}/toggle`, {
       method: 'PATCH',
     });
 
