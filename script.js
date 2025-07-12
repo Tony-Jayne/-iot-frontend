@@ -1,4 +1,4 @@
-const API_URL = 'https://03229063fa89.ngrok-free.app';
+const API_URL = 'https://e6158236d12a.ngrok-free.app';
 
 async function fetchDevices() {
   try {
