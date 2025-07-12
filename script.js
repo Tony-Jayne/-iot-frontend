@@ -1,4 +1,4 @@
-const API_URL = 'https://e6158236d12a.ngrok-free.app';
+const API_URL = 'https://chicken-fun-calf.ngrok-free.app/';
 
 async function fetchDevices() {
   try {
@@ -60,7 +60,7 @@ async function addDevice() {
 
 async function toggleDevice(id) {
   try {
-    const res = await fetch('${apiBaseUrl}/api/devices/${id}/toggle`, {
+    const res = await fetch('https://chicken-fun-calf.ngrok-free.app/api/devices/${id}/toggle`, {
       method: 'PATCH',
     });
 
